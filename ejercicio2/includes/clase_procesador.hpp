@@ -1,28 +1,32 @@
 #include "clases_formas.hpp"
 #include <cmath>
 
-template<typename T, enable_if_t<is_same<T, Circulo>::value>>
+template<typename T>
 class ProcesadorFigura
 {
     public:
-      
         static float Area();
 };
 
-template<typename T, enable_if_t< is_same<T, Elipse>::value>>
-class ProcesadorFigura
+template<>
+class ProcesadorFigura<Circulo>
 {
     public:
-
-        static float Area();
-  
+        static float Area(float Radio);
 };
 
-template<typename T, enable_if< is_same<T, Rectangulo>::value>>
-class ProcesadorFigura
+template<>
+class ProcesadorFigura<Elipse>
 {
     public:
-        static float Area();
+        static float Area(int a, int b);
+};
+
+template<>
+class ProcesadorFigura<Rectangulo>
+{
+    public:
+        static float Area(float largo, float ancho);
 };
 
 
