@@ -12,7 +12,7 @@ class Presion : public Medicionbase
 
         void serializar(ofstream& out) override;
 
-        void deserializar(ofstream& in) override;
+        void deserializar(ifstream& in) override;
 
         void imprimir() const override;
 };
@@ -31,9 +31,8 @@ class Posicion : public Medicionbase
 
         void serializar(ofstream& out) override;
 
-        void deserializar(ofstream& in) override;
+        void deserializar(ifstream& in) override;
 
         void imprimir() const override;
 
 };
-

@@ -6,8 +6,13 @@ class SaveFlightData
 
         Posicion pos;
 
-        SaveFlightData(/* args */);
+        Presion pres;
 
-        void serializar();
-    
+        SaveFlightData(const Posicion& q, const Presion& p);
+
+        void serializar(ofstream& out);
+
+        void deserializar(ifstream& in);
+
+        void imprimir() const;
 };

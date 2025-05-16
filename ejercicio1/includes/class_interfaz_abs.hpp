@@ -10,7 +10,7 @@ class Imediciones
 
         virtual void serializar(ofstream& out) = 0;
 
-        virtual void deserializar(ofstream& in) = 0;
+        virtual void deserializar(ifstream& in) = 0;
 
         virtual ~Imediciones();
 };
@@ -23,10 +23,11 @@ class Medicionbase : public Imediciones
 
     public:
 
+        Medicionbase();
+
         float getTiempo() const;
 
         virtual void imprimir() const = 0;
 
         virtual ~Medicionbase();
 };
-
