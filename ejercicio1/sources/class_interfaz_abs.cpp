@@ -1,6 +1,9 @@
 #include "../includes/class_interfaz_abs.hpp"
 
-Medicionbase::Medicionbase(){cout << "se instancia un objeto de las clases derivadas" << endl;}
+Medicionbase::Medicionbase(float tiempo)
+{   
+    tiempoMedicion = make_unique<float>(tiempo);
+}
 
 float Medicionbase::getTiempo() const
 {

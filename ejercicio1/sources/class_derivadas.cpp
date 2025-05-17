@@ -2,10 +2,7 @@
 
 // implementacion de los metodos de Presion //
 
-Presion::Presion(float p = 0, float q = 0, float t = 0):presionEstatica(p),presionDinamica(q)
-{
-    tiempoMedicion = make_unique<float>(t);
-}
+Presion::Presion(float p = 0, float q = 0, float t = 0):presionEstatica(p),presionDinamica(q), Medicionbase(t){}
 
 void Presion::serializar(ofstream& out)
 {
@@ -33,10 +30,7 @@ void Presion::imprimir() const
 
 // implementacion de los metodos de Posicion //
 
-Posicion::Posicion(float lat = 0, float lon = 0, float alt = 0, float t = 0): latitud(lat), longitud(lon), altitud(alt)
-{
-    tiempoMedicion = make_unique<float>(t);
-}
+Posicion::Posicion(float lat = 0, float lon = 0, float alt = 0, float t = 0): latitud(lat), longitud(lon), altitud(alt), Medicionbase(t){}
 
 void Posicion::serializar(ofstream& out)
 {

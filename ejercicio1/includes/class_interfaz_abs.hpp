@@ -23,7 +23,7 @@ class Medicionbase : public Imediciones
 
     public:
 
-        Medicionbase();
+        Medicionbase(float tiempo);
 
         float getTiempo() const;
 
