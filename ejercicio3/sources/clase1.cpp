@@ -13,29 +13,43 @@ void Clase1<T>::agregar_elemento(T elemento)
 }
 
 template <typename T>
-vector<T> Clase1<T>::get_vector() const
-{
-    return vector_T;
-}
-
-template <typename T>
 string Clase1<T>::procesar() const
 {
-    if constexpr(is_same<vector_T, vector<double>>)
+    ostringstream oss;
+    oss << "[";
+    if constexpr(is_same<T, double>::value || is_same<T, string>::value)
     {
-        return "vec_doubles";
+        for (size_t i = 0; i < vector_T.size(); ++i) 
+        {
+            oss << vec[i];
+            if (i != vec.size() - 1)
+            {
+                oss << ",";
+            }
+        }
     }
-    else if constexpr(is_same<vector_T, vector<string>>)
+    else if constexpr(is_same<T, vector<int>>::value)
     {
-        return "palabras";
-    }
-    else if constexpr(is_same<vector_T, vector<vector<int>>)
-    {
-        return "listas";
+        oss << "\n";
+        for (vector<int> fila : vector_T)
+        { 
+            oss << "[";
+            for (int elemento : fila) 
+            {
+                oss << elemento;
+                if ( &elemento != fila.back())
+                {
+                    oss << ",";
+                }
+            }
+            oss << "]," << "\n";
+        }
+        oss << "\n";
     }
     else
     {
-        return "desconocido";
+        oss << "desconocido";
     }
+    oss << "]";
+    return oss.str();
 }
-

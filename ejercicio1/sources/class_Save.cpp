@@ -19,4 +19,3 @@ void SaveFlightData::imprimir() const
     pos.imprimir();
     pres.imprimir();
 }
-
