@@ -2,7 +2,7 @@
 
 // implementacion de los metodos de Presion //
 
-Presion::Presion(float p = 0, float q = 0, float t = 0):presionEstatica(p),presionDinamica(q), Medicionbase(t){}
+Presion::Presion(float p, float q, float t):Medicionbase(t), presionEstatica(p), presionDinamica(q){}
 
 void Presion::serializar(ofstream& out)
 {
@@ -14,7 +14,7 @@ void Presion::serializar(ofstream& out)
 void Presion::deserializar(ifstream& in)
 {
     float tiempo;
-    in.read(reinterpret_cast<char*>(&tiempo), sizeof(float));
+    in.read(reinterpret_cast<char*>(&tiempo), sizeof(float));    
     *tiempoMedicion = tiempo;
 
     in.read(reinterpret_cast<char*>(&presionEstatica), sizeof(float));
@@ -30,7 +30,7 @@ void Presion::imprimir() const
 
 // implementacion de los metodos de Posicion //
 
-Posicion::Posicion(float lat = 0, float lon = 0, float alt = 0, float t = 0): latitud(lat), longitud(lon), altitud(alt), Medicionbase(t){}
+Posicion::Posicion(float lat, float lon, float alt, float t): Medicionbase(t), latitud(lat), longitud(lon), altitud(alt){}
 
 void Posicion::serializar(ofstream& out)
 {

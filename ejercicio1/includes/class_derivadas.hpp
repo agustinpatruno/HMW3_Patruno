@@ -34,5 +34,4 @@ class Posicion : public Medicionbase
         void deserializar(ifstream& in) override;
 
         void imprimir() const override;
-
 };

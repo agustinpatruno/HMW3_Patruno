@@ -1,12 +1,10 @@
-#include "clase_procesador.hpp"
+#include "../includes/clase_procesador.hpp"
 
-/*
-    comando para compilar:
-        g++ -I../includes *.cpp -o programa
-    comando para ejecutar:
-        ./programa
+//  comando para compilar:
+// g++ -I../includes ../sources/*.cpp main.cpp -o programa -Wall
 
-*/
+// comando para ejecutar:
+//    ./programa
 
 int main()
 {

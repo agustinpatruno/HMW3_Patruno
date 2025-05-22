@@ -9,21 +9,33 @@ Clase1<T>::Clase1()
 template <typename T>
 void Clase1<T>::agregar_elemento(T elemento)
 {
-    if constexpr (is_same_v<T, double>)
+   vector_T = elemento;
+}
+
+template <typename T>
+vector<T> Clase1<T>::get_vector() const
+{
+    return vector_T;
+}
+
+template <typename T>
+string Clase1<T>::procesar() const
+{
+    if constexpr(is_same<vector_T, vector<double>>)
     {
-        vector_double.push_back(elemento);
+        return "vec_doubles";
     }
-    else if constexpr (is_same_v<T, string>)
+    else if constexpr(is_same<vector_T, vector<string>>)
     {
-        vector_string.push_back(elemento);
+        return "palabras";
     }
-    else if constexpr (is_same_v<T, vector<int>>)
+    else if constexpr(is_same<vector_T, vector<vector<int>>)
     {
-        vector_int.push_back(elemento);
+        return "listas";
     }
     else
     {
-        cout << "Tipo desconocido" << endl;
+        return "desconocido";
     }
-    cout << "Elemento agregado: " << elemento << endl;
 }
+

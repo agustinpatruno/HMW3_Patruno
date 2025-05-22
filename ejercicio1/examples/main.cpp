@@ -1,12 +1,11 @@
 #include "../includes/class_Save.hpp"
 
-/*
-    comando para compilar:
-        g++ -I../includes *.cpp -o programa
-    comando para ejecutar:
-        ./programa
 
-*/
+//  comando para compilar:
+// g++ -I../includes ../sources/*.cpp main.cpp -o programa -Wall
+
+// comando para ejecutar:
+//    ./programa
 
 int main()
 {
@@ -21,7 +20,6 @@ int main()
     presion.imprimir();
 
     // creo un objeto SaveFlightData con los objetos anteriores //
-
   
     SaveFlightData data(posicion, presion);
     cout << " datos del objeto SaveFlightData: " << endl;
