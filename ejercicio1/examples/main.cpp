@@ -1,10 +1,10 @@
 #include "../includes/class_Save.hpp"
 
-
 //  comando para compilar manualmente:
-// g++ -I../includes ../sources/*.cpp main.cpp -o programa -Wall
-// comando para ejecutar:
-//    ./programa
+// g++ -I../includes ../sources/*.cpp main.cpp -o programa1 -Wall
+
+// comando para ejecutar manualmnete:
+//    ./programa1
 
 int main()
 {
@@ -23,4 +23,6 @@ int main()
     SaveFlightData data(posicion, presion);
     cout << " datos del objeto SaveFlightData: " << endl;
     data.imprimir();
+
+    return 0;
 }

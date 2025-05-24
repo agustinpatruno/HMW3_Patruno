@@ -1,10 +1,10 @@
 #include "../includes/clase2.hpp"
 
-//  comando para compilar:
-// g++ -I../includes ../sources/*.cpp main.cpp -o programa -Wall
+//  comando para compilar manualmente:
+// g++ -I../includes ../sources/*.cpp main.cpp -o programa3 -Wall
 
-// comando para ejecutar:
-//    ./programa
+// comando para ejecutar manualmente:
+//    ./programa3
 
 int main()
 {
