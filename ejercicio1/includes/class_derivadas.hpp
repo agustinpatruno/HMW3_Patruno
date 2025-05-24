@@ -8,13 +8,13 @@ class Presion : public Medicionbase
 
         float presionDinamica;
 
-        Presion(float p, float q, float t);
+        Presion(float p, float q, float t); // constructor
 
-        void serializar(ofstream& out) override;
+        void serializar(ofstream& out) override; // metodo derivado de la interfaz
 
-        void deserializar(ifstream& in) override;
+        void deserializar(ifstream& in) override; // metodo derivado de la interfaz
 
-        void imprimir() const override;
+        void imprimir() const override; // metodo derivado de la clase abstracta
 };
 
 class Posicion : public Medicionbase
@@ -27,11 +27,11 @@ class Posicion : public Medicionbase
 
         float altitud;
 
-        Posicion(float lat, float lon, float alt, float t);
+        Posicion(float lat, float lon, float alt, float t); // constructor
 
-        void serializar(ofstream& out) override;
+        void serializar(ofstream& out) override; // metodo derivado de la interfaz
 
-        void deserializar(ifstream& in) override;
+        void deserializar(ifstream& in) override; // metodo derivado de la interfaz
 
-        void imprimir() const override;
+        void imprimir() const override; // metodo derivado de la clase abstracta
 };

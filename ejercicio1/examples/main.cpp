@@ -1,9 +1,8 @@
 #include "../includes/class_Save.hpp"
 
 
-//  comando para compilar:
+//  comando para compilar manualmente:
 // g++ -I../includes ../sources/*.cpp main.cpp -o programa -Wall
-
 // comando para ejecutar:
 //    ./programa
 

@@ -1,6 +1,6 @@
 #include "../includes/class_derivadas.hpp"
 
-// implementacion de los metodos de Presion //
+// implementacion de los metodos de la clase Presion //
 
 Presion::Presion(float p, float q, float t):Medicionbase(t), presionEstatica(p), presionDinamica(q){}
 
@@ -14,8 +14,11 @@ void Presion::serializar(ofstream& out)
 void Presion::deserializar(ifstream& in)
 {
     float tiempo;
-    in.read(reinterpret_cast<char*>(&tiempo), sizeof(float));    
-    *tiempoMedicion = tiempo;
+    in.read(reinterpret_cast<char*>(&tiempo), sizeof(float));   
+    if (!tiempoMedicion)
+    {
+        tiempoMedicion = make_unique<float>(tiempo);
+    }
 
     in.read(reinterpret_cast<char*>(&presionEstatica), sizeof(float));
     in.read(reinterpret_cast<char*>(&presionDinamica), sizeof(float));
@@ -28,7 +31,7 @@ void Presion::imprimir() const
     cout << "presion dinamica: " << presionDinamica << endl;
 }
 
-// implementacion de los metodos de Posicion //
+// implementacion de los metodos de la clase Posicion //
 
 Posicion::Posicion(float lat, float lon, float alt, float t): Medicionbase(t), latitud(lat), longitud(lon), altitud(alt){}
 

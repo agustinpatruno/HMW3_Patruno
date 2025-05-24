@@ -4,15 +4,15 @@ class SaveFlightData
 {
     public:
 
-        Posicion pos;
+        Posicion pos; // objeto de la clase Posicion
 
-        Presion pres;
+        Presion pres; // objeto de la clase Presion
 
-        SaveFlightData(const Posicion& q, const Presion& p);
+        SaveFlightData(const Posicion& q, const Presion& p); // constructor
 
-        void serializar(ofstream& out);
+        void serializar(ofstream& out); // llama al metodo serializar() de los atributos
 
-        void deserializar(ifstream& in);
+        void deserializar(ifstream& in); // llama al metodo deserializar() de los atributos (en orden).
 
-        void imprimir() const;
+        void imprimir() const; // llama al metodo imprimir() de los atributos.
 };
