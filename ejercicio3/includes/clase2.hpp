@@ -36,5 +36,6 @@ class clase2
                 etiquetas.push_back("desconocido");
             }
         }
+        
         void crear_JSON(); // crear un JSON
 };

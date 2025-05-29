@@ -6,6 +6,9 @@
 // comando para ejecutar manualmente:
 //    ./programa2
 
+// comando para compilar y ejecutar con makefile:
+// make
+
 int main()
 {
 

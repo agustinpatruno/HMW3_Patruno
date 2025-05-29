@@ -6,6 +6,9 @@
 // comando para ejecutar manualmente:
 //    ./programa3
 
+// comando para compilar y ejecutar con makefile
+// make
+
 int main()
 {
     Clase1<double> vec_double;
@@ -28,8 +31,9 @@ int main()
     clase2 instancia_clase2;
 
     instancia_clase2.agregar_etiquetas(vec_double);
-    instancia_clase2.agregar_etiquetas(vec_string);
     instancia_clase2.agregar_etiquetas(vec_int);
+    instancia_clase2.agregar_etiquetas(vec_string);
+
 
     instancia_clase2.crear_JSON();
 
