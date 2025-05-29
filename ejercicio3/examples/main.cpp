@@ -31,9 +31,8 @@ int main()
     clase2 instancia_clase2;
 
     instancia_clase2.agregar_etiquetas(vec_double);
-    instancia_clase2.agregar_etiquetas(vec_int);
     instancia_clase2.agregar_etiquetas(vec_string);
-
+    instancia_clase2.agregar_etiquetas(vec_int);
 
     instancia_clase2.crear_JSON();
 

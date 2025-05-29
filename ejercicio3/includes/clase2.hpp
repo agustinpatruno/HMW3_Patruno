@@ -1,7 +1,5 @@
 #include "clase1.hpp"
 #include "fstream"
-#include <nlohmann/json.hpp>
-using json = nlohmann::json;
 
 class clase2
 {
@@ -14,11 +12,13 @@ class clase2
 
         clase2(); // constructor de clase2. imprime por consola un mensaje de que se creo correctamente el objeto
 
+        // guarda la etiqueta y el string asociado en el mismo orden en vectores separados
         template<typename T>
-        void agregar_etiquetas(Clase1<T> elemen) // guarda la etiqueta y el string asociado en el mismo orden en vectores separados
+        void agregar_etiquetas(Clase1<T> elemen) 
         {
-            datos.push_back(elemen.procesar());
+            datos.push_back(elemen.procesar()); // almaceno el el vector<T> en formato string en el vector de datos
 
+            // almaceno las etiquetas dependiendo del tipo de vector que sea
             if (is_same<T, double>::value)
             {
                 etiquetas.push_back("vec_doubles");
@@ -37,5 +37,6 @@ class clase2
             }
         }
         
-        void crear_JSON(); // crear un JSON
+        // crea un JSON manualmente
+        void crear_JSON(); 
 };

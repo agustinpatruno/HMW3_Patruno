@@ -1,6 +1,5 @@
 #ifndef CLASE1_HPP
 #define CLASE1_HPP
-
 #include <iostream>
 #include <vector>
 #include <string>
@@ -30,9 +29,9 @@ class Clase1
         {
             ostringstream oss;
             oss << "[";
-            if constexpr(is_same<T, double>::value || is_same<T, string>::value)
+            if constexpr(is_same<T, double>::value || is_same<T, string>::value)// en el caso de que sea un vector de strings o doubles
             {
-                for (size_t i = 0; i < vector_T.size(); ++i) 
+                for (size_t i = 0; i < vector_T.size(); ++i) // almaceno los valores de igual forma en el oss
                 {
                     oss << vector_T[i];
                     if (i != vector_T.size() - 1)
@@ -43,26 +42,33 @@ class Clase1
             }
             else if constexpr(is_same<T, vector<int>>::value)
             {
+                oss << "\n";
                 for (vector<int> fila : vector_T)
                 { 
-                    oss << "[";
+                    oss << "          [";
                     for (size_t i = 0; i < fila.size(); ++i) 
                     {
-                        oss << fila[i];
+                        oss << " "<< fila[i];
                         if ( i != fila.size() -1)
                         {
                             oss << ",";
                         }
                     }
-                    oss << "],";
+                    oss << "]";
+                    oss << "\n";
+                    
                 }
+                oss << "          ]";
+                return oss.str();
             }
-            else
+            else // en caso de que el vector sea de un tipo desconocido
             {
                 oss << "desconocido";
             }
+
             oss << "]";
-            return oss.str();
+
+            return oss.str(); // lo retorno en formato string
         }
 };
 

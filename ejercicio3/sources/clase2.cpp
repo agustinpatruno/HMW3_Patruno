@@ -7,13 +7,24 @@ clase2::clase2()
 
 void clase2::crear_JSON()
 {
-    json dats;
+   ostringstream json;
 
-    for (size_t i = 0; i < etiquetas.size(); i++)
+   json << "{" ;
+
+   for (size_t i = 0; i < etiquetas.size(); i++)
     {
-        dats[etiquetas[i]] = datos[i];
-    }
-    
-    cout << "JSON generado:\n" << dats.dump(4) << endl;
+        json << "  "<< etiquetas[i] << "\": \"" << datos[i];
 
+        if (i < etiquetas.size() - 1) 
+        {
+            json << ", ";
+        }
+
+        json << "\n";
+    }
+
+    json << "\n }";
+
+    string json_str = json.str();
+    cout << json_str << endl;
 }
